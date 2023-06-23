@@ -1,6 +1,6 @@
 <template>
   <div>
-    <table>
+    <table class="table-custom">
       <thead>
       <tr>
         <th>Variety 1</th>
@@ -33,7 +33,7 @@ export default {
     return {
       tableData: [],
       page: 1,
-      perPage: 10,
+      perPage: 20,
       totalPages: 0,
       hasPreviousPage: false,
       hasNextPage: false
@@ -74,3 +74,17 @@ export default {
   }
 };
 </script>
+
+<style>
+.table-custom {
+  margin: 0 auto;
+  width: 80%; /* 根据需要设置表格宽度 */
+  border-collapse: collapse;
+}
+
+.table-custom th, .table-custom td {
+  padding: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+</style>

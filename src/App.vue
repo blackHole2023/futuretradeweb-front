@@ -1,20 +1,15 @@
 <template>
   <div id="app">
-<!--    <img alt="Vue logo" src="./assets/logo.png">-->
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <DataTable />
+    <router-view /> <!-- 使用路由来渲染组件 -->
   </div>
 </template>
-<script>
-import DataTable from './components/DataTable.vue';
 
+<script>
 export default {
   name: 'App',
-  components: {
-    DataTable
-  }
 }
 </script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

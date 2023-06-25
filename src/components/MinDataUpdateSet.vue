@@ -54,7 +54,7 @@ import axios from 'axios';
 
 
 export default {
-  name:'ContinueDataUpdateSet',
+  name:'MinDataUpdateSet',
   data() {
     return {
       tableData: [],
@@ -84,7 +84,7 @@ export default {
   },
   methods: {
     fetchData() {
-      const url = '/conf/get_continue_data_update_set/';
+      const url = '/conf/get_min_data_update_set/';
       const params = {
         page_number: this.page,
         per_page: this.perPage
@@ -125,7 +125,7 @@ export default {
     saveRecord() {
       if(this.formData.id){
         // 发起PUT请求更新记录
-        const url = `/conf/modify_continue_data_update_set/${this.formData.id}`; // 根据后端的接口地址定义URL
+        const url = `/conf/modify_min_data_update_set/${this.formData.id}`; // 根据后端的接口地址定义URL
         axios
             .put(url, this.formData)
             .then((response) => {
@@ -139,7 +139,7 @@ export default {
       }
       else {
         // 发起POST请求创建新记录
-        axios.post('/conf/add_continue_data_update_set', this.formData)
+        axios.post('/conf/add_min_data_update_set', this.formData)
             .then(response => {
               console.log(response.data);
               this.fetchData(); // 创建成功后刷新数据
@@ -155,7 +155,7 @@ export default {
       this.showForm = false; // 隐藏表单弹窗
     },
     deleteRecord(record) {
-      const url = `/conf/delete_continue_data_update_set/${record.id}`; // Update the URL according to your API endpoint
+      const url = `/conf/delete_min_data_update_set/${record.id}`; // Update the URL according to your API endpoint
 
       axios
           .delete(url)
